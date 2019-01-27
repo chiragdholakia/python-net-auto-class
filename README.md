@@ -1,3 +1,2 @@
 # python-net-auto-class
-
-#This readme is for the Python course
+# This is the repo for the Python Network Automation course
