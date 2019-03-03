@@ -1,0 +1,17 @@
+Value DEVICE_ID (\S+)
+Value LOCAL_INT (\S+)
+Value CAPABILITY (\S+)
+Value PORT_ID (\S+)
+
+
+
+Start
+	^Device ID.*Port ID\s+$$ -> NeiTable
+
+NeiTable 
+	^${DEVICE_ID}\s+${LOCAL_INT}\s+.*\s+${CAPABILITY}\s+${PORT_ID}\s*$$ -> Record
+
+EOF
+
+
+

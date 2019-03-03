@@ -1,0 +1,25 @@
+import textfsm
+from pprint import pprint
+template_file ="class4_ex2.template"
+
+template=open(template_file)
+
+with open("ex2_sh_int_input.txt") as f:
+	text_data=f.read()
+
+
+re_table=textfsm.TextFSM(template)
+data=re_table.ParseText(text_data)
+
+header = re_table.header
+
+template.close()
+
+fin_list=[]
+for list_textfsm in data:
+	dict_textfsm=dict(zip(header,list_textfsm))
+	fin_list.append(dict_textfsm)
+
+
+
+pprint (fin_list)

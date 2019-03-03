@@ -1,0 +1,41 @@
+Value INT (\S+)
+Value LINE_STATUS ((up|down))
+Value ADMIN_STATUS ((up|down))
+Value MAC_ADD ([0-9a-f]{4}\.[0-9a-f]{4}\.[0-9a-f]{4})
+Value MTU (\d+)
+Value DUPLEX ((full|half)-duplex)
+Value SPEED (\d+)
+
+Start
+	^${INT} is ${LINE_STATUS}$$ 
+	^admin state is ${ADMIN_STATUS},
+	^  Hardware:.*address: ${MAC_ADD}.*$$
+	^  MTU ${MTU} bytes,
+	^  ${DUPLEX}, ${SPEED} Mb/s	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#extract the interface name, line status, admin state, MAC address, MTU, duplex, and speed 
+#using TextFSM.
