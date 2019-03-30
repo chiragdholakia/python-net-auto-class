@@ -1,0 +1,8 @@
+interface {{interf1}}
+  ip address {{ip1}}/{{netmask1}}
+
+router bgp {{as_number}}
+  neighbor {{nei_ip}} remote-as {{as_number}}
+    address-family ipv4 unicast
+
+
