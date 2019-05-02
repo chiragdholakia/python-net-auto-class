@@ -5,11 +5,12 @@ from napalm import get_network_driver
 from my_devices import network_devices
 
 
-#device_type = cisco.pop("device_type")
-#driver = get_network_driver(device_type)
-#device = driver(**cisco)
+# device_type = cisco.pop("device_type")
+# driver = get_network_driver(device_type)
+# device = driver(**cisco)
 
-#print(device)
+# print(device)
+
 
 def open_napalm_conn(input_device):
 
@@ -21,18 +22,16 @@ def open_napalm_conn(input_device):
 
 
 if __name__ == "__main__":
-    
-    list_connections=[]
-    
+
+    list_connections = []
+
     for device in network_devices:
         conn = open_napalm_conn(device)
         list_connections.append(conn)
 
     for conn in list_connections:
-        print("device is",conn.device) 
-        print("platform is",conn.platform)
+        print("device is", conn.device)
+        print("platform is", conn.platform)
         pprint(conn.get_facts())
-        print("-----------------")        
+        print("-----------------")
         conn.close()
-
-

@@ -13,17 +13,14 @@ def open_napalm_conn(input_device):
 
 def create_backup(conn):
     run_config = conn.get_config()
-    
 
-    filename = "running_config_"+conn.hostname+".txt" 
-    with open(filename , "w") as f:
-        f.write(run_config['running'])
+    filename = "running_config_" + conn.hostname + ".txt"
+    with open(filename, "w") as f:
+        f.write(run_config["running"])
 
 
 def create_checkpoint(conn):
     print("creating checkpoint file")
-    filename = conn.hostname+"_checkpoint_file.txt"
-    with open(filename,"w") as f:
+    filename = conn.hostname + "_checkpoint_file.txt"
+    with open(filename, "w") as f:
         f.write(conn._get_checkpoint_file())
-
-
