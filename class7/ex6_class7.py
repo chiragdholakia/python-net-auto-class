@@ -8,13 +8,15 @@ device = Device(
     password=getpass(),
     transport="https",
     port=8443,
-    verify=False
+    verify=False,
 )
 
 output = device.show("show interface Ethernet2/1")
 
-print(f"Interface: {output['TABLE_interface']['ROW_interface']['interface']}; \
+print(
+    f"Interface: {output['TABLE_interface']['ROW_interface']['interface']}; \
       State: {output['TABLE_interface']['ROW_interface']['state']}; \
-      MTU: {output['TABLE_interface']['ROW_interface']['eth_mtu']}")
+      MTU: {output['TABLE_interface']['ROW_interface']['eth_mtu']}"
+)
 
-#print(output)
+# print(output)
