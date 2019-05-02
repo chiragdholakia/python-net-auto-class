@@ -1,0 +1,11 @@
+#view top-level/api endpoint
+curl -s https://netbox.lasthop.io/api/ --insecure
+
+#view devices endpoint
+curl -H "Authorization: Token $NETBOX_TOKEN" https://netbox.lasthop.io/api/dcim/devices/ --insecure | jq
+
+#view single devices
+curl -H "Authorization: Token $NETBOX_TOKEN" https://netbox.lasthop.io/api/dcim/devices/2/ --insecure | jq
+
+
+
