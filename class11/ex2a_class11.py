@@ -9,15 +9,13 @@ if __name__ == "__main__":
 
     url = "https://netbox.lasthop.io/api/"
     response = requests.get(url, verify=False)
-    print("Status code:",response.status_code)
-    
+    print("Status code:", response.status_code)
+
     print("Text:"),
     pprint(response.text)
-    
+
     print("JSON response:")
     pprint(response.json())
-    
+
     print("HTTP response headers:")
     pprint(response.headers)
-
-
