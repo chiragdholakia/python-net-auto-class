@@ -17,8 +17,8 @@ try:
 except LockError:
     print("Device is already locked")
 
-config.load("set system host-name python4life", format ="set", merge = "True")
-#Check diff of staged vs running config
+config.load("set system host-name python4life", format="set", merge="True")
+# Check diff of staged vs running config
 print("Check diff of staged vs running config")
 print(config.diff())
 
@@ -27,4 +27,3 @@ config.rollback(0)
 
 print("Check diff of staged vs running config after rollback")
 print(config.diff())
-
