@@ -2,21 +2,22 @@ import yaml
 from os import path
 from pprint import pprint
 from netmiko import ConnectHandler
-home_dir=path.expanduser("~")
 
-filename = path.join(home_dir,".netmiko.yml")
+home_dir = path.expanduser("~")
 
-with open( filename ) as f:
-    yaml_data=yaml.load(f)
+filename = path.join(home_dir, ".netmiko.yml")
 
-pprint (yaml_data)
+with open(filename) as f:
+    yaml_data = yaml.load(f)
 
-
-cisco_data=yaml_data['cisco3']
+pprint(yaml_data)
 
 
-net_connect=ConnectHandler(**cisco_data)
+cisco_data = yaml_data["cisco3"]
 
-print (net_connect.find_prompt())
+
+net_connect = ConnectHandler(**cisco_data)
+
+print(net_connect.find_prompt())
 
 net_connect.disconnect()
